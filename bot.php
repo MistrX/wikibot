@@ -71,7 +71,7 @@ class IRCBot {
 								break;
 							case "log":
 								if($fg->query->recentchanges[0]->logtype=="newusers"){
-									$s="Se ha registrado el usuario ".$fg->query->recentchanges[0]->user."";
+									$s="Se ha registrado el usuario [[".$fg->query->recentchanges[0]->title."]]";
 								}elseif($fg->query->recentchanges[0]->logtype=="rights"){
 									if($fg->query->recentchanges[0]->rights->old==""){$old="(ninguno)";}else{$old=$fg->query->recentchanges[0]->rights->old;}
 									if($fg->query->recentchanges[0]->rights->new==""){$new="(ninguno)";}else{$new=$fg->query->recentchanges[0]->rights->new;}
