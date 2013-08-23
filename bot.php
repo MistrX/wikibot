@@ -50,7 +50,12 @@ class IRCBot {
 						$this->send_data('PRIVMSG NickServ :IDENTIFY '.$config['nsuser'].' '.$config['nspass']);
 						$this->send_data('JOIN', $config['channel']);
 						break;
-					case "376":	$this->kk=1;
+					case "376":	$this->kk=1;break;
+					case "PRIVMSG":
+						preg_match("@:PRIVMSG (.*) (.*):(.*)@",$data,$tmpvar);
+						$mtxt=$tmpvar[3];
+						break;
+						
 				}
 				
 				if($this->kk==1){
