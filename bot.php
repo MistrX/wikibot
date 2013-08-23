@@ -18,6 +18,7 @@ class IRCBot {
         var $socket;
         var $ex = array();
 		private $kk;
+	public $hablar=true;
 
         function __construct($config){
                 $this->socket = fsockopen($config['server'], $config['port']);
@@ -51,13 +52,21 @@ class IRCBot {
 						$this->send_data('JOIN', $config['channel']);
 						break;
 					case "376":	$this->kk=1;break;
-					case "PRIVMSG":
-						preg_match("@:PRIVMSG (.*) (.*):(.*)@",$data,$tmpvar);
-						$mtxt=$tmpvar[3];
-						break;
-						
 				}
-				
+			
+
+
+switch($command) //List of commands the bot responds to from a user.
+
+{
+
+case ':!hablar':
+$this->hablar=true;
+break;
+case ':!nohablar':
+$this->hablar=false;
+}
+				if($this->hablar==true){
 				if($this->kk==1){
 					$fl=file_get_contents("$config[wiki]api.php?action=query&list=recentchanges&format=json&rcprop=user|comment|flags|title|timestamp|loginfo");
 					$fg=json_decode($fl);
@@ -89,6 +98,7 @@ class IRCBot {
 						fclose($tsfile);
 						$this->send_data("PRIVMSG $config[channel] :$s");
 					}
+				}
 				}
                 $this->main($config);
         }
