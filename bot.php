@@ -5,9 +5,9 @@ ini_set('display_errors', 'on');
 $config = array( 
         'server' 	=> 'asimov.freenode.net',  // Servidor IRC
         'port'   	=> 6667,  // Puerto
-        'channel' 	=> '#canal', // Canal
-        'name'   	=> 'Wiki bot',  // GECOS del bot 
-        'nick'   	=> 'WikiBot',  // Nick del bot
+        'channel' 	=> '#channel', // Canal
+        'name'   	=> 'WhiteBot',  // GECOS del bot 
+        'nick'   	=> 'WhiteBot',  // Nick del bot
         'pass'  	=> '', // Contraseña del servidor
 		'nsuser'	=> 'WhiteBot', // Usuario de nickserv del bot (usualmente es el mismo nick)
 		'nspass'	=> 'pass', // Contrasña de nickserv
