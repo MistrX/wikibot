@@ -10,7 +10,7 @@ $config = array(
         'nick'   	=> 'WhiteBot',  // Nick del bot
         'pass'  	=> '', // Contraseña del servidor
 		'nsuser'	=> 'WhiteBot', // Usuario de nickserv del bot (usualmente es el mismo nick)
-		'nspass'	=> 'pass', // Contrasña de nickserv
+		'nspass'	=> 'pass', // Contraseña de nickserv
 		'wiki'		=> 'http://es.wikivoyage.org', // Wiki
 );
                                  
